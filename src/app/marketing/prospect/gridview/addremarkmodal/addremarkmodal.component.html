@@ -1,0 +1,21 @@
+<div>
+    <div class="NewHeader">
+        <h1 mat-dialog-title><span *ngIf="!remark">Add</span><span *ngIf="remark">Edit</span> Notes</h1>
+    </div>
+    <div mat-dialog-content>
+        <form class="form-horizontal">
+            <div class="form-group">
+
+                <div class="col-sm-12">
+                    <textarea *ngIf="!remark" class="txtarea form-control" placeholder="Enter Remarks" rows="4"></textarea>
+                    <textarea *ngIf="remark" class="txtarea form-control" placeholder="Enter Remarks" rows="4">Hi You Can Edit Here </textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-raised-button class="btn-primary" (click)="saveLead()"><mat-icon>save</mat-icon><span *ngIf="!remark">Save</span><span *ngIf="remark">Update</span></button>
+        <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+    </mat-dialog-actions>
+
+</div>

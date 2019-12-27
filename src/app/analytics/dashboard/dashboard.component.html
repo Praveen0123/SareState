@@ -1,0 +1,390 @@
+<div fxLayout="row wrap">
+    <div class="w-100 flex-p">
+        <div class="row wrap">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                    <button mat-raised-button color="primary" class="pull-right filter-hover" (click)="toggleFilter()">
+                        <mat-icon>filter_list</mat-icon> Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p" *ngIf="filterToggle">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <mat-select color="primary" placeholder="--Select Year--" class="form-control">
+                            <mat-option [value]="0">2016</mat-option>
+                            <mat-option [value]="1">2017</mat-option>
+                            <mat-option [value]="2">2018</mat-option>
+                            <mat-option [value]="3">2019</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <mat-select color="primary" multiple placeholder="--Select Users--" class="form-control">
+                            <mat-option [value]="0">Siva</mat-option>
+                            <mat-option [value]="1">Sai</mat-option>
+                            <mat-option [value]="2">Praveen</mat-option>
+                            <mat-option [value]="3">Pradeep</mat-option>
+                            <!-- <mat-option [value]="4">May</mat-option>
+                            <mat-option [value]="5">June</mat-option>
+                            <mat-option [value]="6">July</mat-option>
+                            <mat-option [value]="7">August</mat-option>
+                            <mat-option [value]="8">September</mat-option>
+                            <mat-option [value]="9">October</mat-option>
+                            <mat-option [value]="10">November</mat-option>
+                            <mat-option [value]="11">December</mat-option> -->
+                        </mat-select>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <mat-select color="primary" multiple placeholder="--Select Month--" class="form-control">
+                            <mat-option [value]="0">January</mat-option>
+                            <mat-option [value]="1">February</mat-option>
+                            <mat-option [value]="2">March</mat-option>
+                            <mat-option [value]="3">April</mat-option>
+                            <mat-option [value]="4">May</mat-option>
+                            <mat-option [value]="5">June</mat-option>
+                            <mat-option [value]="6">July</mat-option>
+                            <mat-option [value]="7">August</mat-option>
+                            <mat-option [value]="8">September</mat-option>
+                            <mat-option [value]="9">October</mat-option>
+                            <mat-option [value]="10">November</mat-option>
+                            <mat-option [value]="11">December</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="add-hover btn btn-success pull-right">Search</button>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="button" class="btn filter-hover" style="background-color:#37474f; color:#fff !important">Clear</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-p" style="margin-top: -10px;">
+        <div class="row ">
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat blue-madison">
+                        <div class="visual">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                70
+                            </div>
+                            <div class="desc">
+                                <b>Leads</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat gray-madison">
+                        <div class="visual">
+                            <i class="fa fa-skyatlas"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                35
+                            </div>
+                            <div class="desc">
+                                <b>Active Prospects </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat pyellow-madison">
+                        <div class="visual">
+                            <i class="fa fa-free-code-camp"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                15
+                            </div>
+                            <div class="desc">
+                                <b> Active Deals </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat red-intense">
+                        <div class="visual">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                15
+                            </div>
+                            <div class="desc">
+                                <b>Excluded </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat green-haze">
+                        <div class="visual">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                15%
+                            </div>
+                            <div class="desc">
+                                <b> Conversation Ratio</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat pblue-madison">
+                        <div class="visual">
+                            <i class="fa fa-codepen"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                10%
+                            </div>
+                            <div class="desc">
+                                <b>Sales/Conversion Ratio </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat purple-plum">
+                        <div class="visual">
+                            <i class="fa fa-gitlab"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 105697
+                            </div>
+                            <div class="desc">
+                                Billing this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat ppurple-madison">
+                        <div class="visual">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 96587
+                            </div>
+                            <div class="desc">
+                                Collections this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="piChart"></div>
+                </mat-card>
+
+                <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="'ganttChart'" [options]="chartGantt" style="width: 100%; height: 350px; display: block;"></highcharts-chart> -->
+            </div>
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="chart"></div>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="col-sm-12 my-5">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="opportunitieschart"></div>
+                </mat-card>
+
+                <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="'ganttChart'" [options]="chartGantt" style="width: 100%; height: 350px; display: block;"></highcharts-chart> -->
+            </div>
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="Leadchart"></div>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="col-sm-12 my-5">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="salespipelinechart"></div>
+                </mat-card>
+
+                <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="'ganttChart'" [options]="chartGantt" style="width: 100%; height: 350px; display: block;"></highcharts-chart> -->
+            </div>
+            <div class="col-sm-6 my-5">
+                <div fxLayout="row wrap">
+                    <div class="col-sm-12">
+                        <div class="col-sm-5 " style="font-size:x-large ;">
+                            <b>Activities</b>
+                        </div>
+                        <div class="col-sm-7">
+                            <mat-select placeholder="--Search by users--" multiple class="form-control">
+                                <mat-option *ngFor="let option of users" [value]="">{{option}}</mat-option>
+                            </mat-select>
+                        </div>
+                    </div>
+                    <div class="table-responsive my-5">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead class="tbl-head">
+                                <tr class="tr-grid-header">
+                                    <th>S.No</th>
+                                    <th>Activities</th>
+                                    <th>Status </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of tableList">
+                                    <td>{{item.id}}</td>
+                                    <td><a [routerLink]="['/sare/property/inventory']" target="_blank" style="color:#007ad9!important;cursor: pointer!important;">{{item.activity}}</a></td>
+                                    <td>{{item.Status}}
+                                        <!-- <mat-select placeholder="--Search by users--" class="form-control">
+                                            <mat-option [value]="1">Open</mat-option>
+                                            <mat-option [value]="2">Closed</mat-option>
+                                            <mat-option [value]="3">Pending</mat-option>
+                                        </mat-select> -->
+                                    </td>
+
+
+                                    <!-- <td>
+                                      <a matTooltip="Edit Case" style="margin-right: 10px; cursor: pointer;font-size:16px!important;color:#0987e8d1" (click)="openNewPatientDialog(item)">
+                                        <i class="fa fa-edit"></i>
+                                      </a>
+                                      <a mwlConfirmationPopover
+                                      [popoverTitle]="popoverTitle"
+                                      [popoverMessage]="popoverMessage"
+                                      placement="left"
+                                      (confirm)="deleteNewPatientOrder()"
+                                      (cancel)="cancelClicked = true" [appendToBody]="true">
+                                          <i style="cursor: pointer;font-size:16px!important;" matTooltip="Delete Case" class="fa fa-trash red"></i>
+                                      </a>
+                                  </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-12">
+            <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                <div [chart]="prospectchart"></div>
+            </mat-card>
+        </div>
+        <div class="col-sm-12 my-5">
+            <div class="col-sm-6">
+                <div fxLayout="column">
+                    <!-- <div class="flex-p">  -->
+                    <mat-card>
+                        <mat-card-header fxLayoutAlign="center center">
+                            <mat-card-subtitle>
+                                <h2>Leads Distribution</h2>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <div class="w-100 h-300p">
+                            <agm-map #PropAgmMap [minZoom]="1" [maxZoom]="14" [zoom]="1" [streetViewControl]="false" [latitude]="lat" [longitude]="lng" [zoomControlOptions]="zoomControlOptions" [fullscreenControl]="true">
+                                <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+                                    <agm-marker *ngFor="let pointer of prospectPointers" [latitude]="pointer.lat" [longitude]="pointer.lng" (mouseOver)="onMouseOver(propInfoWindow,PropAgmMap)" (mouseOut)="onMouseOut(propInfoWindow,PropAgmMap)">
+                                        <agm-info-window [disableAutoPan]="true" #propInfoWindow>
+                                            <strong>{{pointer.label}}</strong>
+                                        </agm-info-window>
+                                    </agm-marker>
+                                </agm-marker-cluster>
+                            </agm-map>
+                        </div>
+                    </mat-card>
+                    <!-- </div>   -->
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div fxLayout="column">
+                    <!-- <div class="flex-p">  -->
+                    <mat-card>
+                        <mat-card-header fxLayoutAlign="center center">
+                            <mat-card-subtitle>
+                                <h2>Prospects Distribution</h2>
+                            </mat-card-subtitle>
+                        </mat-card-header>
+                        <div class="w-100 h-300p">
+                            <agm-map #OppAgmMap [minZoom]="1" [maxZoom]="14" [zoom]="1" [streetViewControl]="false" [latitude]="lat" [longitude]="lng" [zoomControlOptions]="zoomControlOptions" [fullscreenControl]="true">
+                                <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+                                    <agm-marker *ngFor="let pointer of oppPointers" [latitude]="pointer.lat" [longitude]="pointer.lng" (mouseOver)="onMouseOver(oppInfoWindow,OppAgmMap)" (mouseOut)="onMouseOut(oppInfoWindow,OppAgmMap)">
+                                        <agm-info-window [disableAutoPan]="true" #oppInfoWindow>
+                                            <strong>{{pointer.label}}</strong>
+                                        </agm-info-window>
+                                    </agm-marker>
+                                </agm-marker-cluster>
+                            </agm-map>
+                        </div>
+                    </mat-card>
+                    <!-- </div>   -->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 my-5">
+            <div fxLayout="column">
+                <!-- <div class="flex-p">  -->
+                <mat-card>
+                    <mat-card-header fxLayoutAlign="center center">
+                        <mat-card-subtitle>
+                            <h2>Deals Distribution</h2>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <div class="w-100 h-300p">
+                        <agm-map #OppAgmMap [minZoom]="1" [maxZoom]="14" [zoom]="1" [streetViewControl]="false" [latitude]="lat" [longitude]="lng" [zoomControlOptions]="zoomControlOptions" [fullscreenControl]="true">
+                            <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+                                <agm-marker *ngFor="let pointer of oppPointers" [latitude]="pointer.lat" [longitude]="pointer.lng" (mouseOver)="onMouseOver(oppInfoWindow,OppAgmMap)" (mouseOut)="onMouseOut(oppInfoWindow,OppAgmMap)">
+                                    <agm-info-window [disableAutoPan]="true" #oppInfoWindow>
+                                        <strong>{{pointer.label}}</strong>
+                                    </agm-info-window>
+                                </agm-marker>
+                            </agm-marker-cluster>
+                        </agm-map>
+                    </div>
+                </mat-card>
+                <!-- </div>   -->
+            </div>
+        </div>
+    </div>
+
+</div>

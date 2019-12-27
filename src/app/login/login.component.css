@@ -1,0 +1,16 @@
+::ng-deep .mat-form-field-suffix {
+    bottom: -4px !important;
+}
+
+
+/* .colorClassImportant {
+    background-color: black;
+} */
+
+.custom-login {
+    background-blend-mode: multiply;
+    background-color: initial;
+    background-image: url(../../assets/img/10.jpg), linear-gradient(180deg, #666b70 0, #4c829d 100%);
+    background-size: cover;
+    height: 10px;
+}

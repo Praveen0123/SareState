@@ -1,0 +1,116 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100">
+        
+        <div class="row" style="margin-bottom:14px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                    <!-- <button mat-raised-button class="pull-right add-hover-help btn-success-help" style="margin-left: 10px;">
+                        <mat-icon>help_outline</mat-icon> Help
+                    </button> -->
+                    <!-- <button mat-raised-button class="pull-right add-hover btn-success" (click)="openPatientDialog(null)">
+                        <mat-icon>person_add</mat-icon> Add Order
+                    </button> -->
+                    <button mat-raised-button color="primary" style="color: white !important;" class="pull-right filter-hover margin-right-10" (click)="filterToggle = !filterToggle">
+                        <mat-icon>filter_list</mat-icon> Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+                <mat-card class="filter">
+                    <mat-card-content>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-lg-5 col-md-6">
+                                <div class="col-xs-4 col-sm-6 col-lg-4 col-md-6 newMarginClass">
+                                    Referring Physician : 
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                                    <mat-select placeholder="--Search by Referring Physician--" multiple class="form-control">
+                                        <mat-option *ngFor="let option of referringOptions" [value]="">{{option}}</mat-option>
+                                    </mat-select>
+                                </div>
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-1 col-lg-1 col-sm-4 col-md-2">
+                                    <button type="button" class="add-hover btn btn-success  pull-right">Search</button>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <!-- <div class="col-lg-1 col-sm-4 col-md-2">
+                                <button type="button" class="add-hover btn btn-success  pull-right">Search</button>
+                            </div> -->
+                            <div class="col-lg-7 col-sm-4 col-md-2"></div>
+                        </div>
+                        
+                        
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        
+        <div fxLayout="row wrap">
+            <div class="table-responsive">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead class="tbl-head">
+                        <tr class="tr-grid-header">
+                            <!-- <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>DOB</th> -->
+                                <th>Referring Physician</th>
+                                <th>Attorney</th>
+                                <th>Received Date</th>
+                                <th>Document</th>
+                                <th>Fax number</th>
+                                <th>Efax series number</th>
+                                <th>Actions</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of tableList">
+                                <!-- <td>{{item.firstName}}</td>
+                                    <td>{{item.lastName}}</td>
+                                    <td>{{item.dob}}</td> -->
+                                    <td>{{item.orderingPhysician}}</td>
+                                    <td>{{item.firstName}} {{item.lastName}}</td>
+                                    <td>{{item.receivedDate}}</td>
+                                    <td><a href="../../../../assets/img/vendor/leaflet/fax.pdf" target="_blank"><i class="fa fa-file-pdf-o" style="cursor: pointer;;font-size:16px!important;"></i></a></td>
+                                    <td>{{item.faxNumber}}</td>
+                                    <td>{{item.eFaxNumber}}</td>
+                                    <td>
+                                        <a *ngIf="item.normal == 6" matTooltip="Query Patient" style="margin-right: 10px; cursor: pointer;color: green;font-size:16px!important" (click)="openInsuranceDialog(item)">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
+                                        <a *ngIf="item.normal == 5" matTooltip="Patient Query under process" style="margin-right: 10px; cursor: pointer;color: green;font-size:16px!important">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                        </a>
+                                        <a matTooltip="Edit Incoming Order" style="margin-right: 10px; cursor: pointer;font-size:16px!important;color:#0987e8d1" (click)="openPatientDialog(item)">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a mwlConfirmationPopover
+                                        [popoverTitle]="popoverTitle"
+                                        [popoverMessage]="popoverMessage"
+                                        placement="left"
+                                        (confirm)="deletePatientOrder()"
+                                        (cancel)="cancelClicked = true" [appendToBody]="true">
+                                        <i style="cursor: pointer;font-size:16px!important;" matTooltip="Delete Incoming Order" class="fa fa-trash red"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="!tableList" fxLayout="column" fxLayoutAlign="center center" class="campaign-spinner">
+        <mat-spinner color="primary"></mat-spinner>
+    </div>

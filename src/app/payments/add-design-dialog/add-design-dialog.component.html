@@ -1,0 +1,46 @@
+<div>
+    <div class="NewHeader">
+        <h1 mat-dialog-title> Screen Layout</h1>
+    </div>
+    <div mat-dialog-content>
+        <form class="form-horizontal">
+            <div class="form-group">
+
+                <div class="col-sm-12">
+                    <p>This screen provides the overview of all the payments that has been made by the customer which follows through Construction Linked Plan.
+                        <br>
+                        <br> <b>Add Payment - Modal Popup</b>
+                        <br>
+                        <br> Customer Name:* Text Box
+                        <br> Agent:* Drop down
+                        <br> Builder:* Drop down
+                        <br> Project:* drop down
+                        <br> Date of Payment:* Date picker
+                        <br> Mode of payment:* Drop down
+
+                        <br> Status:* drop down
+                        <br> Save and Cancel button
+                        <br>
+                        <br> <b>Filter Fields</b>
+                        <br> Customer Name: Keyword Search
+                        <br> Builder: drop down
+                        <br> Project: drop down
+                        <br> Status: drop down
+                        <br> Date Range: Date picker
+                        <br> Search and Clear buttons
+                        <br>
+                        <br> <b>Grid View - Column Fields</b>
+                        <br>
+                        <br>customer Name, Builder Assigned, Project Assigned, Agent, Date of payment, Mode of payment, Status, Actions (plus icon)
+
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <mat-dialog-actions align="end">
+        <!-- <button mat-raised-button class="btn-primary" (click)="saveremark()"><mat-icon>save</mat-icon><span *ngIf="!remark">Save</span><span *ngIf="remark">Update</span></button> -->
+        <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+    </mat-dialog-actions>
+
+</div>

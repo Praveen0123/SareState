@@ -1,0 +1,26 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100">
+        <app-mastercampaign></app-mastercampaign>
+
+        <div class="col-sm-12 my-3">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="webschart"></div>
+                </mat-card>
+            </div>
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="onlineschart"></div>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-sm-12 my-5">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="offlineschart"></div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+</div>

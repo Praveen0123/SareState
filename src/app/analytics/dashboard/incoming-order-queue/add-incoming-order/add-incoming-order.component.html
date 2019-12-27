@@ -1,0 +1,89 @@
+<div class="NewHeader">
+    <h1 mat-dialog-title><span *ngIf="!order">Add</span><span *ngIf="order">Edit</span> Incoming Order</h1>
+</div>
+<div mat-dialog-content>
+
+    <form class="form-horizontal" novalidate [formGroup]="incomingOrderForm">
+        <div class="form-group">
+            <label class="control-label col-sm-4 add-member-label">First Name : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" id="email" formControlName="addFirstName" placeholder="Enter first name" required>
+                <div *ngIf="!addFirstName.valid && (addFirstName.dirty || addFirstName.touched)" class="error-text">
+                    <div *ngIf="addFirstName.errors.required">
+                        First name is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">Last Name : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" id="email" formControlName="addLastName" placeholder="Enter last name" required>
+                <div *ngIf="!addLastName.valid && (addLastName.dirty || addLastName.touched)" class="error-text">
+                    <div *ngIf="addLastName.errors.required">
+                        Last name is required
+                    </div>
+                </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">DOB : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="input-icon right">
+                    <i class="fa fa-calendar" [owlDateTimeTrigger]="dt1"></i>
+                    <input class="form-control" placeholder="MM/DD/YYYY" formControlName="addDob" class="form-control" id="db" [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" name="dt1" required>
+                    <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                </div>
+                <div *ngIf="!addDob.valid && (addDob.dirty || addDob.touched)" class="error-text">
+                    <div *ngIf="addDob.errors.required">
+                        Date of birth is required
+                    </div>
+                </div>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Referring Physician : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <!-- <input type="text" class="form-control" placeholder="Enter Industry"> -->
+              <mat-select color="primary" placeholder="--Select Ordering Physician--" formControlName="addReferringPhysician" class="form-control" required>
+                <mat-option [value]="0">Domenic Vinci</mat-option>
+                <mat-option [value]="1">Brad Kewalramani</mat-option>
+                <mat-option [value]="2">Kipling Morton</mat-option>
+                <mat-option [value]="3">Michael Persaud</mat-option>
+                <mat-option [value]="4">Dan McCarthy</mat-option>
+            </mat-select>
+            <div *ngIf="!addReferringPhysician.valid && (addReferringPhysician.dirty || addReferringPhysician.touched)" class="error-text">
+                <div *ngIf="addReferringPhysician.errors.required">
+                    Referring Physician is required
+                </div>
+            </div>  
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Received Date : </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div class="input-icon right">
+                    <i class="fa fa-calendar" [owlDateTimeTrigger]="dt2"></i>
+                    <input class="form-control" placeholder="MM/DD/YYYY" formControlName="addReceivedDate" class="form-control" id="db" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" name="dt2" required>
+                    <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                </div>
+                <div *ngIf="!addReceivedDate.valid && (addReceivedDate.dirty || addReceivedDate.touched)" class="error-text">
+                    <div *ngIf="addReceivedDate.errors.required">
+                        Received date is required
+                    </div>
+                </div>  
+          </div>
+        </div>
+        <!-- <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4">Select Document : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 margins">
+                <input type="file" accept="image/*" placeholder="Upload file..." style="margin-top: 3px;">
+            </div>
+        </div> -->
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button [ngClass]="!incomingOrderForm.valid ? '' : 'btn-primary'" [disabled]="!incomingOrderForm.valid" (click)="saveOrder()" [mat-dialog-close]="'test'"><mat-icon>save</mat-icon><span *ngIf="!order">Save</span><span
+            *ngIf="order">Update</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+</mat-dialog-actions> 

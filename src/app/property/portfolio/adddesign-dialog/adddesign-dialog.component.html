@@ -1,0 +1,45 @@
+<div>
+    <div class="NewHeader">
+        <h1 mat-dialog-title><span *ngIf="!remark">Screen</span><span *ngIf="remark">Edit</span> Layout</h1>
+    </div>
+    <div mat-dialog-content>
+        <form class="form-horizontal">
+            <div class="form-group">
+
+                <div class="col-sm-12">
+                    <p>Properties list of the builders are managed here. Builder shall have the ability to create the property and the property details with a blueprint of the construction Blueprint of the constructions shall be maintained in this screen
+                        to ease the purpose of selling the property to the client.
+
+                        <!-- <br>
+                        <br> <b>Add Realtor - Modal Popup</b>
+                        <br>
+                        <br>Realtor Name:* Text Box
+                        <br>Builder:* Drop down
+                        <br> Project:* drop down
+                        <br> Mobile Number:* Text box
+                        <br> Email:* Text box
+                        <br> Address:* Text box
+                        <br> Status:* drop down
+                        <br> Save and Cancel button
+                        <br>
+                        <br> <b>Filter Fields</b>
+                        <br> Realtor Name: Keyword Search
+                        <br> Builder: drop down
+                        <br> Project: drop down
+                        <br> Status: drop down
+                        <br> Search and Clear buttons
+                        <br>
+                        <br> <b>Grid View - Column Fields</b>
+                        <br>
+                        <br> Realtor Name, Builder Assigned, Project Assigned, Realtor Contact Number, Realtor Email, Address, Status (either Active or Inactive), Actions (Edit & Delete icons)  -->
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <mat-dialog-actions align="end">
+        <!-- <button mat-raised-button class="btn-primary" (click)="saveremark()"><mat-icon>save</mat-icon><span *ngIf="!remark">Save</span><span *ngIf="remark">Update</span></button> -->
+        <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Close</button>
+    </mat-dialog-actions>
+
+</div>

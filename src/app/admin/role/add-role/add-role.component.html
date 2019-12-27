@@ -1,0 +1,111 @@
+<div class="NewHeader">
+    <h1 mat-dialog-title><span *ngIf="!role">Add</span><span *ngIf="role">Edit</span> Role</h1>
+</div>
+<div mat-dialog-content>
+
+    <form class="form-horizontal" novalidate [formGroup]="addRoleForm">
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Role: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" formControlName="Role" placeholder="Enter Role" required>
+                <!-- <mat-select name="" id="" formControlName="businessCenter" placeholder="-- Select Business Center --" class="form-control" required>
+                  <mat-option [value]=1>Core Health</mat-option>
+                  <mat-option [value]=2>Sapphire MD</mat-option>
+                  <mat-option [value]=3>Pain Allieviation</mat-option>
+                  <mat-option [value]=4>Centre for Pain Relief</mat-option>
+                  <mat-option [value]=5>Prime Orthopedics</mat-option>
+              </mat-select> -->
+                <div *ngIf="!Role.valid && (Role.dirty || Role.touched)" class="error-text">
+                    <div *ngIf="Role.errors.required">
+                        Role is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label">First Name: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" formControlName="userName" id="" placeholder="Enter First Name" required>
+              <div *ngIf="!userName.valid && (userName.dirty || userName.touched)" class="error-text">
+                  <div *ngIf="userName.errors.required">
+                      First Name is required
+                  </div>
+              </div>
+          </div>
+      </div> -->
+        <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label">Last Name:</label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <input type="text" class="form-control" formControlName="uniqueId" placeholder="Enter Last Name" required>
+              <div *ngIf="!uniqueId.valid && (uniqueId.dirty || uniqueId.touched)" class="error-text">
+                  <div *ngIf="uniqueId.errors.required">
+                      Last Name is required
+                  </div>
+              </div>
+          </div>
+      </div> -->
+        <!-- <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" for="pwd">Email : </label>
+          <div class="col-sm-8">
+              <input type="email" email formControlName="addEmail" class="form-control" placeholder="Enter Email" required>
+              <div *ngIf="!addEmail.valid && (addEmail.dirty || addEmail.touched)" class="error-text">
+                  <div *ngIf="addEmail.errors.required">
+                      Email is required
+                  </div>
+                  <div *ngIf="addEmail.errors.email">
+                      Enter a valid email
+                  </div>
+              </div>
+          </div>
+      </div> -->
+        <!-- <div class="form-group">
+          <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Role: </label>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+              <mat-select name="" id="" formControlName="attorney" placeholder="-- Select Role --" class="form-control" required>
+                  <mat-option [value]=1>Broker</mat-option>
+                  <mat-option [value]=2>Builder </mat-option>
+                  <mat-option [value]=3>Agents</mat-option>
+                
+              </mat-select>
+              <div *ngIf="!attorney.valid && (attorney.dirty || attorney.touched)" class="error-text">
+                  <div *ngIf="attorney.errors.required">
+                      Role is required
+                  </div>
+              </div>
+          </div>
+      </div> -->
+        <!-- <div class="form-group">
+          <label class="control-label col-sm-4 add-member-label" for="pwd">Phone : </label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" maxlength="10" (keypress)="onlyNumbers($event)" formControlName="addphone" placeholder="Enter Contact Number" required>
+              <div *ngIf="!addphone.valid && (addphone.dirty || addphone.touched)" class="error-text">
+                  <div *ngIf="addphone.errors.required">
+                      Phone is required
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Status : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <mat-select name="" id="" formControlName="selectStatus" placeholder="-- Select Status --" class="form-control" required>
+                    <mat-option [value]=1>Active</mat-option>
+                    <mat-option [value]=2>Inactive</mat-option>
+                </mat-select>
+                <div *ngIf="!selectStatus.valid && (selectStatus.dirty || selectStatus.touched)" class="error-text">
+                    <div *ngIf="selectStatus.errors.required">
+                        Status is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button [disabled]="!addRoleForm.valid" style="cursor:pointer;" [ngClass]="!addRoleForm.valid ? '' : 'btn-primary'" (click)="saverole()" [mat-dialog-close]="'test'"><mat-icon>save</mat-icon><span *ngIf="!role">Save</span><span
+              *ngIf="role">Update</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+</mat-dialog-actions>

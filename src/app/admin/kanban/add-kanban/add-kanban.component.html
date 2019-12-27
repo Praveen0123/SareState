@@ -1,0 +1,40 @@
+<div class="NewHeader">
+    <h1 mat-dialog-title><span *ngIf="!kanban">Add</span><span *ngIf="kanban">Edit</span> Role</h1>
+</div>
+<div mat-dialog-content>
+
+    <form class="form-horizontal" novalidate [formGroup]="addkanbanForm">
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Step Name: </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <input type="text" class="form-control" formControlName="Step" placeholder="Enter Step Name" required>
+
+                <div *ngIf="!Step.valid && (Step.dirty || Step.touched)" class="error-text">
+                    <div *ngIf="Step.errors.required">
+                        Step Name is required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-4 col-md-4 col-sm-4 col-xs-4 add-member-label" for="pwd">Select Status : </label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <mat-select name="" id="" formControlName="selectStatus" placeholder="-- Select Status --" class="form-control" required>
+                    <mat-option [value]=1>Active</mat-option>
+                    <mat-option [value]=2>Inactive</mat-option>
+                </mat-select>
+                <div *ngIf="!selectStatus.valid && (selectStatus.dirty || selectStatus.touched)" class="error-text">
+                    <div *ngIf="selectStatus.errors.required">
+                        Status is required
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+<mat-dialog-actions align="end">
+    <button mat-raised-button [disabled]="!addkanbanForm.valid" style="cursor:pointer;" [ngClass]="!addkanbanForm.valid ? '' : 'btn-primary'" (click)="savekanban()" [mat-dialog-close]="'test'"><mat-icon>save</mat-icon><span *ngIf="!kanban">Save</span><span
+            *ngIf="kanban">Update</span></button>
+    <button mat-raised-button class="CancelClass" (click)="close()"><mat-icon>cancel</mat-icon>&nbsp;Cancel</button>
+</mat-dialog-actions>

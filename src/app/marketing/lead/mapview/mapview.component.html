@@ -1,0 +1,27 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100">
+        <app-masterview></app-masterview>
+        <div fxLayout="column">
+            <!-- <div class="flex-p">  -->
+            <mat-card>
+                <mat-card-header fxLayoutAlign="center center">
+                    <mat-card-subtitle>
+                        <h2>Leads Distribution</h2>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <div class="w-100 h-300p">
+                    <agm-map #OppAgmMap [minZoom]="1" [maxZoom]="14" [zoom]="1" [streetViewControl]="false" [latitude]="lat" [longitude]="lng" [zoomControlOptions]="zoomControlOptions" [fullscreenControl]="true">
+                        <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+                            <agm-marker *ngFor="let pointer of oppPointers" [latitude]="pointer.lat" [longitude]="pointer.lng" (mouseOver)="onMouseOver(oppInfoWindow,OppAgmMap)" (mouseOut)="onMouseOut(oppInfoWindow,OppAgmMap)">
+                                <agm-info-window [disableAutoPan]="true" #oppInfoWindow>
+                                    <strong>{{pointer.label}}</strong>
+                                </agm-info-window>
+                            </agm-marker>
+                        </agm-marker-cluster>
+                    </agm-map>
+                </div>
+            </mat-card>
+            <!-- </div>   -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<div fxLayout="row wrap">
+    <!-- <div class="w-100 flex-p">
+        <div class="row wrap">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                    <button mat-raised-button color="primary" class="pull-right filter-hover" (click)="toggleFilter()">
+                        <mat-icon>filter_list</mat-icon> Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p" *ngIf="filterToggle">
+        <mat-card class="filter">
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <mat-select color="primary" placeholder="--Select Year--" class="form-control">
+                            <mat-option [value]="0">2016</mat-option>
+                            <mat-option [value]="1">2017</mat-option>
+                            <mat-option [value]="2">2018</mat-option>
+                            <mat-option [value]="3">2019</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <mat-select color="primary" placeholder="--Select Month--" class="form-control">
+                            <mat-option [value]="0">January</mat-option>
+                            <mat-option [value]="1">February</mat-option>
+                            <mat-option [value]="2">March</mat-option>
+                            <mat-option [value]="3">April</mat-option>
+                            <mat-option [value]="4">May</mat-option>
+                            <mat-option [value]="5">June</mat-option>
+                            <mat-option [value]="6">July</mat-option>
+                            <mat-option [value]="7">August</mat-option>
+                            <mat-option [value]="8">September</mat-option>
+                            <mat-option [value]="9">October</mat-option>
+                            <mat-option [value]="10">November</mat-option>
+                            <mat-option [value]="11">December</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <button class="add-hover btn btn-success">Go</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 flex-p" style="margin-top: -10px;">
+        <div class="row ">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat blue-madison">
+                        <div class="visual">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                10
+                            </div>
+                            <div class="desc">
+                                Incoming Referrals this week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat gray-madison">
+                        <div class="visual">
+                            <i class="fa fa-skyatlas"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                23
+                            </div>
+                            <div class="desc">
+                                Patient Visits this week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat pyellow-madison">
+                        <div class="visual">
+                            <i class="fa fa-free-code-camp"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 10265
+                            </div>
+                            <div class="desc">
+                                Billing this week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat red-intense">
+                        <div class="visual">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 9823
+                            </div>
+                            <div class="desc">
+                                Collections this week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat green-haze">
+                        <div class="visual">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                52
+                            </div>
+                            <div class="desc">
+                                Incoming Referrals this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat pblue-madison">
+                        <div class="visual">
+                            <i class="fa fa-codepen"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                208
+                            </div>
+                            <div class="desc">
+                                Patient Visits this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat purple-plum">
+                        <div class="visual">
+                            <i class="fa fa-gitlab"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 105697
+                            </div>
+                            <div class="desc">
+                                Billing this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="w-100 flex-p">
+                    <div class="dashboard-stat ppurple-madison">
+                        <div class="visual">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                $ 96587
+                            </div>
+                            <div class="desc">
+                                Collections this month
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p">
+        <div class="col-sm-12 my-3">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="webchart"></div>
+                </mat-card>
+
+                <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="'ganttChart'" [options]="chartGantt" style="width: 100%; height: 350px; display: block;"></highcharts-chart> -->
+            </div>
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="onlinechart"></div>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="col-sm-12 my-5">
+            <div class="col-sm-6">
+                <mat-card fxFlex="100" fxFlex.gt-sm="100" class="flex-p">
+                    <div [chart]="offlinechart"></div>
+                </mat-card>
+
+                <!-- <highcharts-chart [Highcharts]="Highcharts" [constructorType]="'ganttChart'" [options]="chartGantt" style="width: 100%; height: 350px; display: block;"></highcharts-chart> -->
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,109 @@
+<div fxLayout="row wrap" #resizedDiv>
+    <div class="flex-p w-100">
+
+        <app-mastercampaign></app-mastercampaign>
+
+        <div class="row" style="margin-bottom:14px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="w-100 flex-p">
+                    <!-- <button mat-raised-button class="pull-right add-hover-help btn-success-help" style="margin-left: 10px;">
+            <mat-icon>help_outline</mat-icon> Help
+          </button> -->
+                    <button mat-raised-button class="pull-right add-hover btn-success" (click)="openonlineDialog(null)">
+            <mat-icon>person_add</mat-icon> Add Campaign
+          </button>
+                    <button mat-raised-button color="primary" style="color: white !important;" class="pull-right filter-hover margin-right-10" (click)="filterToggle = !filterToggle">
+            <mat-icon>filter_list</mat-icon> Filter
+          </button>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.gt-sm fxFlex.sm class="flex-p w-100" *ngIf="filterToggle">
+                <mat-card class="filter">
+                    <mat-card-content>
+
+                        <div class="row col-sm-12">
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Campaign Name:
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="--Enter Campaign Name--">
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="col-sm-4 newMarginClass">
+                                    Status :
+                                </div>
+                                <div class="col-sm-8">
+                                    <mat-select placeholder="--Search by Status--" class="form-control">
+                                        <mat-option [value]="0">Active</mat-option>
+                                        <mat-option [value]="1">Inactive</mat-option>
+                                    </mat-select>
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="add-hover btn btn-success pull-right">Search</button>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn filter-hover" style="background-color:#37474f; color:#fff !important">Clear</button>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+
+        <div fxLayout="row wrap">
+            <div class="table-responsive">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead class="tbl-head">
+                        <tr class="tr-grid-header">
+                            <th>Campaign Name</th>
+                            <th>Campaign Type</th>
+                            <th>Product/Project</th>
+                            <th>Assigned to</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <!-- <th>Address</th> -->
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tableList">
+                            <td>{{item.cmpName}}</td>
+                            <td>{{item.cmptype}}</td>
+                            <td>{{item.product}}</td>
+                            <td> <a matTooltip="" style="margin-right: 10px; cursor: pointer;font-size:16px!important;color:#0987e8d1" (click)="openuserDialog()">{{item.Assigned}}  
+                            </a></td>
+                            <td>{{item.startdate}}</td>
+                            <td>{{item.enddate}}</td>
+                            <td class="pad-left inner-screen" style="cursor:pointer">
+                                <a (click)="item.status = ! item.status">
+                                    <span *ngIf="!item.status" style="color:red">Inactive</span>
+                                    <span *ngIf="item.status" style="color:#1c4f86;">Active</span>
+                                </a>
+                            </td>
+
+                            <td>
+                                <a matTooltip="Edit online campaign" style="margin-right: 10px; cursor: pointer;font-size:16px!important;color:#0987e8d1" (click)="openonlineDialog(item)">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage" placement="left" (confirm)="deletecampaign()" (cancel)="cancelClicked = true" [appendToBody]="true">
+                                    <i style="cursor: pointer;font-size:16px!important;" matTooltip="Delete online campaign" class="fa fa-trash red"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
